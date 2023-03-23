@@ -62,7 +62,7 @@ router.post("/login", async (req, res, next) => {
     next(err);
   }
 });
-router.get("/userList", auth, async (req, res, next) => {
+router.get("/userList", async (req, res, next) => {
   const userService = new UserService();
   try {
     const userList = await userService.userList();
