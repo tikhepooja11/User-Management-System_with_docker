@@ -7,6 +7,7 @@ const config = require("../config/config");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const auth = require("../middlewares/auth");
+
 router.post("/register", async (req, res, next) => {
   console.log("Registering new user");
   const userService = new UserService();
@@ -78,6 +79,7 @@ router.get("/userList", async (req, res, next) => {
 router.get("/userdetails/:id", auth, async (req, res, next) => {
   console.log("inside route");
   const id = req.params.id;
+  console.log("req", req.options);
   const userService = new UserService();
   try {
     const user = await userService.getUserDetails(id);

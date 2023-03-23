@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-const Address = require("./address");
-console.log(typeof Address);
 
 const userSchema = new mongoose.Schema({
   name: String,
