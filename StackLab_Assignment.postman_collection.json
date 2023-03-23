@@ -1,162 +1,280 @@
 {
-	"info": {
-		"_postman_id": "06f75acf-0ac8-4b1a-b91d-60be38db8cf7",
-		"name": "StackLab_Assignment",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "api-healthcheck",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "register",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"Sushant Tikhe\",\n    \"email\": \"tikhesushant33@gmail.com\",\n    \"password\": \"sushant123\",\n    \"phone\": \"7038451084\",\n    \"address\": \"my addr\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:1338/userroute/register",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "1338",
-					"path": [
-						"userroute",
-						"register"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "login",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"email\":\"tikhepooja11@gmail.com\",\n    \"password\":\"pooja123\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:1338/userroute/login",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "1338",
-					"path": [
-						"userroute",
-						"login"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "userList",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "userDetails",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:1338/userroute/userdetails/641bc11e575d3e5efd2e83d0",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "1338",
-					"path": [
-						"userroute",
-						"userdetails",
-						"641bc11e575d3e5efd2e83d0"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "userLocation",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "getNearbyUsers",
-			"request": {
-				"method": "GET",
-				"header": []
-			},
-			"response": []
-		},
-		{
-			"name": "updateUser",
-			"request": {
-				"method": "PATCH",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:1338/userroute/getNearbyUsers/641c110cb569c51e625cb67b",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "1338",
-					"path": [
-						"userroute",
-						"getNearbyUsers",
-						"641c110cb569c51e625cb67b"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "deleteUser",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:1338/userroute/updateUser/641c1070b569c51e625cb677",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "1338",
-					"path": [
-						"userroute",
-						"updateUser",
-						"641c1070b569c51e625cb677"
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "06f75acf-0ac8-4b1a-b91d-60be38db8cf7",
+    "name": "StackLab_Assignment",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "api-healthcheck",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": {
+        "message": "Routers are working fine"
+      }
+    },
+    {
+      "name": "register",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"name\": \"Sushant Tikhe\",\n    \"email\": \"tikhesushant33@gmail.com\",\n    \"password\": \"sushant123\",\n    \"phone\": \"7038451084\",\n    \"address\": \"my addr\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:1338/userroute/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1338",
+          "path": ["userroute", "register"]
+        }
+      },
+      "response": {
+        "name": "Pooja Tikhe",
+        "email": "tikhepooja11@gmail.com",
+        "password": "$2b$10$eUkIfhZmvcICBAanFZ0TFeEmpRW6PAIU1NlY2s4w.FeY8mTAAEhIG",
+        "phone": "7038451085",
+        "address": "my addr3",
+        "location": {
+          "type": "Point",
+          "coordinates": [20.88, 55.2]
+        },
+        "_id": "641c41deb252b76fab0cba2f",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWM0MWRlYjI1MmI3NmZhYjBjYmEyZiIsImVtYWlsIjoidGlraGVwb29qYTExQGdtYWlsLmNvbSIsImlhdCI6MTY3OTU3MzQ3MH0.HCKxndOWt_emFU2T6V3gQrc2kvBaafAeojusdvoOAns",
+        "__v": 0
+      }
+    },
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\":\"tikhepooja11@gmail.com\",\n    \"password\":\"pooja123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:1338/userroute/login",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1338",
+          "path": ["userroute", "login"]
+        }
+      },
+      "response": {
+        "_id": "641c1070b569c51e625cb677",
+        "name": "Pooja Tikhe",
+        "email": "tikhepooja11@gmail.com",
+        "password": "$2b$10$MI510Q.MFis1.dM2fBZWfe2/OpJsd9Pa1ZDJxx1iI8bWWIRNI1sHS",
+        "phone": "7038451084",
+        "address": "my addr2",
+        "location": {
+          "type": "Point",
+          "coordinates": [10.087626, 20.151134]
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWMxMDcwYjU2OWM1MWU2MjVjYjY3NyIsImVtYWlsIjoidGlraGVwb29qYTExQGdtYWlsLmNvbSIsImlhdCI6MTY3OTU2MTA4MX0.n_2hyyTd58bqOB0gUOews-4iAUqld3s3fZgX7WquPFw",
+        "__v": 0
+      }
+    },
+    {
+      "name": "userList",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "_id": "641c110cb569c51e625cb67b",
+          "name": "Nikhil Tikhe",
+          "email": "tikhenikhil22@gmail.com",
+          "password": "$2b$10$4aFiga1RgDdhhhIIdAxlGu44oaF.YdC2G4sRIIrGAPc7X1xtgPNqu",
+          "phone": "9834132319",
+          "address": "my addr2",
+          "location": {
+            "type": "Point",
+            "coordinates": [25.1973, 55.2793]
+          },
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWMxMTBjYjU2OWM1MWU2MjVjYjY3YiIsImVtYWlsIjoidGlraGVuaWtoaWwyMkBnbWFpbC5jb20iLCJpYXQiOjE2Nzk1NjA5NzJ9.0UuoLmzSBcXXXIjI6-Q5tygY0TabkvmlNiIkGSisiK8",
+          "__v": 0
+        },
+        {
+          "_id": "641c115fb569c51e625cb67f",
+          "name": "Sushant Tikhe",
+          "email": "tikhesushant33@gmail.com",
+          "password": "$2b$10$Y8M0iwAMssIYmnzqZ2zOx.cg7VC7s6WnzQ.qZtBuUh9cvHVNXEWFO",
+          "phone": "9123456378",
+          "address": "my addr2",
+          "location": {
+            "type": "Point",
+            "coordinates": [25.087626, 55.151134]
+          },
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWMxMTVmYjU2OWM1MWU2MjVjYjY3ZiIsImVtYWlsIjoidGlraGVzdXNoYW50MzNAZ21haWwuY29tIiwiaWF0IjoxNjc5NTYxMDU1fQ.6Ejs4lwIljCavUmJuUFnQ1Y9r2XYFItByBc0m9fE2u4",
+          "__v": 0
+        },
+        {
+          "_id": "641c41deb252b76fab0cba2f",
+          "name": "Pooja Tikhe",
+          "email": "tikhepooja11@gmail.com",
+          "password": "$2b$10$eUkIfhZmvcICBAanFZ0TFeEmpRW6PAIU1NlY2s4w.FeY8mTAAEhIG",
+          "phone": "7038451085",
+          "address": "my addr3",
+          "location": {
+            "type": "Point",
+            "coordinates": [20.88, 55.2]
+          },
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWM0MWRlYjI1MmI3NmZhYjBjYmEyZiIsImVtYWlsIjoidGlraGVwb29qYTExQGdtYWlsLmNvbSIsImlhdCI6MTY3OTU3MzQ3MH0.HCKxndOWt_emFU2T6V3gQrc2kvBaafAeojusdvoOAns",
+          "__v": 0
+        }
+      ]
+    },
+    {
+      "name": "userDetails",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1338/userroute/userdetails/641bc11e575d3e5efd2e83d0",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1338",
+          "path": ["userroute", "userdetails", "641bc11e575d3e5efd2e83d0"]
+        }
+      },
+      "response": [
+        {
+          "_id": "641c41deb252b76fab0cba2f",
+          "name": "Pooja Tikhe",
+          "email": "tikhepooja11@gmail.com",
+          "password": "$2b$10$eUkIfhZmvcICBAanFZ0TFeEmpRW6PAIU1NlY2s4w.FeY8mTAAEhIG",
+          "phone": "7038451085",
+          "address": "my addr3",
+          "location": {
+            "type": "Point",
+            "coordinates": [20.88, 55.2]
+          },
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWM0MWRlYjI1MmI3NmZhYjBjYmEyZiIsImVtYWlsIjoidGlraGVwb29qYTExQGdtYWlsLmNvbSIsImlhdCI6MTY3OTU3MzQ3MH0.HCKxndOWt_emFU2T6V3gQrc2kvBaafAeojusdvoOAns",
+          "__v": 0
+        }
+      ]
+    },
+    {
+      "name": "userLocation",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "latitude": 20.88,
+          "longitude": 55.2
+        }
+      ]
+    },
+    {
+      "name": "getNearbyUsers",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "_id": "641c115fb569c51e625cb67f",
+          "name": "Sushant Tikhe",
+          "email": "tikhesushant33@gmail.com",
+          "password": "$2b$10$Y8M0iwAMssIYmnzqZ2zOx.cg7VC7s6WnzQ.qZtBuUh9cvHVNXEWFO",
+          "phone": "9123456378",
+          "address": "my addr2",
+          "location": {
+            "type": "Point",
+            "coordinates": [25.087626, 55.151134]
+          },
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWMxMTVmYjU2OWM1MWU2MjVjYjY3ZiIsImVtYWlsIjoidGlraGVzdXNoYW50MzNAZ21haWwuY29tIiwiaWF0IjoxNjc5NTYxMDU1fQ.6Ejs4lwIljCavUmJuUFnQ1Y9r2XYFItByBc0m9fE2u4",
+          "__v": 0
+        },
+        {
+          "_id": "641c1070b569c51e625cb677",
+          "name": "Pooja Tikhe",
+          "email": "tikhepooja11@gmail.com",
+          "password": "$2b$10$MI510Q.MFis1.dM2fBZWfe2/OpJsd9Pa1ZDJxx1iI8bWWIRNI1sHS",
+          "phone": "7038451084",
+          "address": "my addr2",
+          "location": {
+            "type": "Point",
+            "coordinates": [20.88, 55.2]
+          },
+          "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWMxMDcwYjU2OWM1MWU2MjVjYjY3NyIsImVtYWlsIjoidGlraGVwb29qYTExQGdtYWlsLmNvbSIsImlhdCI6MTY3OTU2MDgxNn0.5mxu1A68bOZe7R88RU8GJmz5k-qRZt6IvedX4awaoy4",
+          "__v": 0
+        }
+      ]
+    },
+    {
+      "name": "updateUser",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1338/userroute/getNearbyUsers/641c110cb569c51e625cb67b",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1338",
+          "path": ["userroute", "getNearbyUsers", "641c110cb569c51e625cb67b"]
+        }
+      },
+      "response": {
+        "_id": "641c1070b569c51e625cb677",
+        "name": "Pooja Tikhe",
+        "email": "tikhepooja11@gmail.com",
+        "password": "$2b$10$MI510Q.MFis1.dM2fBZWfe2/OpJsd9Pa1ZDJxx1iI8bWWIRNI1sHS",
+        "phone": "7038451085",
+        "address": "my addr3",
+        "location": {
+          "type": "Point",
+          "coordinates": [20.88, 55.2]
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWMxMDcwYjU2OWM1MWU2MjVjYjY3NyIsImVtYWlsIjoidGlraGVwb29qYTExQGdtYWlsLmNvbSIsImlhdCI6MTY3OTU2MDgxNn0.5mxu1A68bOZe7R88RU8GJmz5k-qRZt6IvedX4awaoy4",
+        "__v": 0
+      }
+    },
+    {
+      "name": "deleteUser",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:1338/userroute/updateUser/641c1070b569c51e625cb677",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "1338",
+          "path": ["userroute", "updateUser", "641c1070b569c51e625cb677"]
+        }
+      },
+      "response": {
+        "_id": "641c1070b569c51e625cb677",
+        "name": "Pooja Tikhe",
+        "email": "tikhepooja11@gmail.com",
+        "password": "$2b$10$MI510Q.MFis1.dM2fBZWfe2/OpJsd9Pa1ZDJxx1iI8bWWIRNI1sHS",
+        "phone": "7038451085",
+        "address": "my addr3",
+        "location": {
+          "type": "Point",
+          "coordinates": [20.88, 55.2]
+        },
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY0MWMxMDcwYjU2OWM1MWU2MjVjYjY3NyIsImVtYWlsIjoidGlraGVwb29qYTExQGdtYWlsLmNvbSIsImlhdCI6MTY3OTU2MDgxNn0.5mxu1A68bOZe7R88RU8GJmz5k-qRZt6IvedX4awaoy4",
+        "__v": 0
+      }
+    }
+  ]
 }
