@@ -10,4 +10,4 @@ COPY . .
 
 EXPOSE 1338
 
-CMD [ "npm", "server.js" ]
+CMD [ "node", "src/server.js" ]
