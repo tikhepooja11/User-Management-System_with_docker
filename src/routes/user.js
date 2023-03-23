@@ -79,14 +79,14 @@ router.get("/userList", async (req, res, next) => {
 router.get("/userdetails/:id", auth, async (req, res, next) => {
   console.log("inside route");
   const id = req.params.id;
-  console.log("req", req.options);
   const userService = new UserService();
   try {
     const user = await userService.getUserDetails(id);
-    if (user) {
-      res.status(200).json(user);
-    } else {
+    console.log("user", user);
+    if (user.length == 0) {
       return res.status(404).json({ message: "User with id not found" });
+    } else {
+      res.status(200).json(user);
     }
   } catch (error) {
     console.log("err2");
@@ -103,7 +103,8 @@ router.get("/getUserLocation/:id", auth, async (req, res, next) => {
       return res.status(400).json({ message: "User with id not found" });
     }
     const locationCordinates = await userService.getUserLocation(id);
-    if (locationCordinates.length > 0) {
+    console.log(locationCordinates);
+    if (locationCordinates) {
       res.status(200).json(locationCordinates);
     } else {
       return res.status(404).json({ message: "Location cordinates are empty" });
@@ -120,7 +121,6 @@ router.get("/getNearbyUsers/:id", auth, async (req, res, next) => {
     const checkValidUser = await userService.getUserDetails(id);
 
     if (!checkValidUser) {
-      console.log("error1");
       return res.status(400).json({ message: "User with id not found" });
     }
     const { location } = checkValidUser;
@@ -136,6 +136,49 @@ router.get("/getNearbyUsers/:id", auth, async (req, res, next) => {
     }
   } catch (error) {
     return res.status(500).json({ message: "Internal Server Error" });
+  }
+});
+
+router.delete("/delete/:id", auth, async (req, res) => {
+  const id = req.params.id;
+  const userService = new UserService();
+  try {
+    const checkUserExists = await userService.getUserDetails(id);
+    if (!checkUserExists) {
+      return res.status(400).json({ message: "User with id not found" });
+    }
+    const deletedUser = await userService.deleteUser(id);
+    if (!deletedUser) {
+      return res
+        .status(404)
+        .json({ message: "Error in updating the user details" });
+    }
+    return res.status(200).json(deletedUser);
+  } catch (error) {
+    return res.status(500).json({ message: "Internal server error" });
+  }
+});
+
+router.patch("/updateUser/:id", auth, async (req, res) => {
+  console.log("Updating User");
+  const id = req.params.id;
+  const updateInput = req.body;
+  const userService = new UserService();
+  try {
+    const checkUserExists = await userService.getUserDetails(id);
+    console.log(typeof checkUserExists);
+    if (checkUserExists.length === 0) {
+      return res.status(400).json({ message: "User with id not found" });
+    }
+    const updatedUser = await userService.updateUser(id, updateInput);
+    if (!updatedUser) {
+      return res
+        .status(404)
+        .json({ message: "Error in updating the user details" });
+    }
+    return res.status(200).json(updatedUser);
+  } catch (error) {
+    return res.status(500).json({ message: "Internal server error" });
   }
 });
 module.exports = router;

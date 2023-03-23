@@ -35,14 +35,14 @@ class UserRepository {
     return result;
   };
   getUserDetails = async (id) => {
-    const result = await UserModel.findOne({ _id: id });
+    const result = await UserModel.find({ _id: id });
     return result;
   };
   getUserLocation = async (id) => {
     const user = await UserModel.findOne({ _id: id });
     const locationCordinates = {
-      latitude: user.latitude,
-      longitude: user.longitude,
+      latitude: user.location.coordinates[0],
+      longitude: user.location.coordinates[1],
     };
     return locationCordinates;
   };
@@ -58,6 +58,15 @@ class UserRepository {
     });
     console.log("inside repo nearbyUsersList", nearbyUsersList);
     return nearbyUsersList;
+  };
+  deleteUser = async (id) => {
+    const result = await UserModel.findByIdAndDelete(id);
+    return result;
+  };
+  updateUser = async (id, updateInput) => {
+    const options = { new: true };
+    const result = await UserModel.findByIdAndUpdate(id, updateInput, options);
+    return result;
   };
 }
 module.exports = UserRepository;

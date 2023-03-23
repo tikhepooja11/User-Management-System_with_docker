@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "06f75acf-0ac8-4b1a-b91d-60be38db8cf7",
+		"name": "StackLab_Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api-healthcheck",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Sushant Tikhe\",\n    \"email\": \"tikhesushant33@gmail.com\",\n    \"password\": \"sushant123\",\n    \"phone\": \"7038451084\",\n    \"address\": \"my addr\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1338/userroute/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1338",
+					"path": [
+						"userroute",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"tikhepooja11@gmail.com\",\n    \"password\":\"pooja123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:1338/userroute/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1338",
+					"path": [
+						"userroute",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userList",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "userDetails",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1338/userroute/userdetails/641bc11e575d3e5efd2e83d0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1338",
+					"path": [
+						"userroute",
+						"userdetails",
+						"641bc11e575d3e5efd2e83d0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "userLocation",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "getNearbyUsers",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "updateUser",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1338/userroute/getNearbyUsers/641c110cb569c51e625cb67b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1338",
+					"path": [
+						"userroute",
+						"getNearbyUsers",
+						"641c110cb569c51e625cb67b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteUser",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:1338/userroute/updateUser/641c1070b569c51e625cb677",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "1338",
+					"path": [
+						"userroute",
+						"updateUser",
+						"641c1070b569c51e625cb677"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

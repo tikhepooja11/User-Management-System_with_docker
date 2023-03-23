@@ -23,6 +23,7 @@ class UserService {
 
   getUserDetails = async (id) => {
     const user = await this.repository.getUserDetails(id);
+    console.log("user", user);
     return user;
   };
   getUserLocation = async (id) => {
@@ -33,6 +34,14 @@ class UserService {
     console.log("inside servie", location);
     const nearbyUsersList = await this.repository.getNearByUsers(location);
     return nearbyUsersList;
+  };
+  deleteUser = async (id) => {
+    const user = await this.repository.deleteUser(id);
+    return user;
+  };
+  updateUser = async (id, updateInput) => {
+    const updatedUser = await this.repository.updateUser(id, updateInput);
+    return updatedUser;
   };
 }
 module.exports = UserService;
